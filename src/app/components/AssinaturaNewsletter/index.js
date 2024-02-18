@@ -1,7 +1,28 @@
+import { useState } from 'react';
 import styles from './index.module.css';
 import formStyles from './form.module.css';
 
 export default function AssinaturaNewsletter() {
+    const [email, setEmail] = useState('');
+
+    const handleEmailChange = (event) =>{
+        setEmail(event.target.value);
+    };
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (isValidEmail(email)) {
+            const message = `Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}.`;
+            alert(message);
+        } else {
+            alert('Por favor, insira um e-mail válido.');
+        }
+    };
+
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
     return (        
         <div className={styles.assinaturaNewsletter}>
             <div className={styles.assinaturaNewsletter__container}>
@@ -19,10 +40,15 @@ export default function AssinaturaNewsletter() {
                 </div>
 
 
-                <form className={formStyles.form} action="/">
+                <form className={formStyles.form} onSubmit={handleSubmit}>
                     <div className={formStyles.fieldGroup}>
-                        <input type="email" placeholder='Insira seu E-mail' />
-                        <button>
+                        <input 
+                            type="email" 
+                            placeholder='Insira seu E-mail' 
+                            value={email}
+                            onChange={handleEmailChange} 
+                        />
+                        <button type="submit">
                             Assinar Newsletter
                         </button>
                     </div>
