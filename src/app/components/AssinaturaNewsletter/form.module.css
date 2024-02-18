@@ -53,3 +53,7 @@
         width: initial;
     }
 }
+
+.errorMsg{
+  padding-top: 20px;
+}

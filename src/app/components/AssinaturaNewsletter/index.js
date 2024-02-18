@@ -1,26 +1,78 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import formStyles from './form.module.css';
 
-export default function AssinaturaNewsletter() {
-    const [email, setEmail] = useState('');
+function useFormik({
+    initialValues,
+    validate
+}) {
+    const [touched, setTouchedFields] = useState({});
+    const [errors, setErrors] = useState({});
+    const [values, setValues] = useState(initialValues);
 
-    const handleEmailChange = (event) =>{
-        setEmail(event.target.value);
-    };
+    useEffect(() => {
+        //console.log('alguem mexeu nos valores', values);
+        validateValues(values);
+    }, [values]);
     
+
+    function handleChange(event){
+        const fieldName = event.target.getAttribute('name');
+        const value = event.target.value;
+        setValues({
+            ...values,
+            [fieldName]: value,
+        });
+    }
+
+    function handleBlur(event) {
+        const fieldName = event.target.getAttribute('name');
+        //console.log(fieldName);
+        setTouchedFields({
+            ...touched,
+            [fieldName]: true,
+        });
+        validateValues(values); // validar novamente quando o campo perder o foco
+    }
+
+    function validateValues(values) {
+        setErrors(validate(values));
+    }
+
+    return {
+        values,
+        errors,
+        touched,
+        handleBlur,
+        handleChange,
+    };
+}
+
+export default function AssinaturaNewsletter(){
+    const formik = useFormik({
+        initialValues: {
+            userEmail: '',
+        },
+        validate: function(values) {
+            const errors = {};
+
+            if (!values.userEmail) {
+                errors.userEmail = 'Por favor, insira seu e-mail.';
+            } else if (!values.userEmail.includes('@')) {
+                errors.userEmail = 'Por favor, insira um e-mail válido.';
+            }  
+            
+            return errors;
+        }
+    });
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (isValidEmail(email)) {
-            const message = `Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}.`;
-            alert(message);
-        } else {
-            alert('Por favor, insira um e-mail válido.');
-        }
-    };
+        //console.log(formik.values);
 
-    const isValidEmail = (email) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (Object.keys(formik.errors).length === 0 && formik.values.userEmail) {
+            alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${formik.values.userEmail}.`);
+        }
     };
 
     return (        
@@ -39,20 +91,26 @@ export default function AssinaturaNewsletter() {
                     </p>
                 </div>
 
-
                 <form className={formStyles.form} onSubmit={handleSubmit}>
                     <div className={formStyles.fieldGroup}>
                         <input 
                             type="email" 
                             placeholder='Insira seu E-mail' 
-                            value={email}
-                            onChange={handleEmailChange} 
+                            name="userEmail"
+                            id="userEmail"
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                            value={formik.values.userEmail}
                         />
-                        <button type="submit">
+                       
+                        <button type="submit" disabled={Object.keys(formik.errors).length > 0 || !formik.values.userEmail}>
                             Assinar Newsletter
                         </button>
                     </div>
                 </form>
+
+                {formik.touched.userEmail && formik.errors.userEmail && <div className={formStyles.errorMsg}>{formik.errors.userEmail}</div>}
+                        
             </div>
         </div>
     );
