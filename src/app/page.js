@@ -1,5 +1,6 @@
 "use client"
 import AssinaturaNewsletter from "./components/AssinaturaNewsletter";
+import ComoConseguir from "./components/ComoConseguir";
 import Menu from "./components/Menu";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Menu/>
       <AssinaturaNewsletter />
+      <ComoConseguir/>
     </main>
   );
 }

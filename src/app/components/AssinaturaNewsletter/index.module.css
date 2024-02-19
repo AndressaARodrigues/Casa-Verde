@@ -9,6 +9,7 @@
     .assinaturaNewsletter {
       background-color: transparent;
       margin-top: 155px;
+      height: 737px;
     }
     .assinaturaNewsletter:after {
         content: "";
