@@ -54,8 +54,23 @@
     width: 52px; 
     height: 52px; 
     background-color: #FFCB47; 
-    border-radius: 50%; 
+    border-radius: 50%;     
 }
+
+.blink {
+    animation: blink 1s infinite alternate;
+    opacity: 1; /* Começa visível */
+}
+
+@keyframes blink {
+    from {
+        opacity: 1; /* Começa visível */
+    }
+    to {
+        opacity: 0; /* Fica invisível */
+    }
+}
+
 
 @media (max-width: 919px) {
     .howToGet__container {
