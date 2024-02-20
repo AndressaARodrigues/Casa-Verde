@@ -1,0 +1,19 @@
+.discoverOffers {
+    padding-top: 40px;
+}
+
+.discoverOffers h2 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #202020;
+}
+
+.discoverOffers h2 strong {
+    font-family: Elsie Swash Caps;
+    font-weight: 900;
+    font-size: 82px;
+    line-height: 94px;
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+.card {
+    display: flex;
+    max-width: 400px;
+    max-height: 210px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.card__container__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.card__title {
+    font-family: Elsie Swash Caps;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 37px;
+}
+
+.card__price {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.card__save__btn{
+    color: #FFCB47;
+    font-family: Montserrat;
+    font-size: 16px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    text-align: start;
+}
+
+.card__save__btn img{
+    padding-left: 10px;
+}
