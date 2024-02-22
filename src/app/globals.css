@@ -20,7 +20,7 @@ main {
         background-image: url('/images/body-shape.svg'),
                           url('/images/bg.jpg');
         background-repeat: no-repeat, 
-                          repeat-x;
+                           repeat-y;
         background-position: right top;
     }
 }

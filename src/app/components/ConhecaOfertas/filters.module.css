@@ -1,0 +1,37 @@
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.filters button,
+.filters input[type="number"] {
+    margin-right: 10px;
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    background-color: #4CAF50; 
+    color: white;
+    cursor: pointer;
+}
+
+.filters input[type="number"] {
+    width: 125px;
+}
+
+.filters button:hover {
+    background-color: #FFCB47; 
+}
+
+.filters button:disabled {
+    background-color: #cccccc; 
+    cursor: not-allowed;
+}
+
+.offersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

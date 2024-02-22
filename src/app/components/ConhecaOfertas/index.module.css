@@ -1,5 +1,6 @@
 .discoverOffers {
     padding-top: 40px;
+    min-height: 500px;
 }
 
 .discoverOffers h2 {
@@ -17,3 +18,13 @@
     line-height: 94px;
     text-align: center;
 }
+
+.offersContainer{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+

@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     max-width: 990px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); 
+    box-shadow: 10px 10px 30px 0px #0000000f;
 }
 
 .howToGet__container__text {
@@ -59,15 +59,15 @@
 
 .blink {
     animation: blink 1s infinite alternate;
-    opacity: 1; /* Começa visível */
+    opacity: 1; 
 }
 
 @keyframes blink {
     from {
-        opacity: 1; /* Começa visível */
+        opacity: 1; 
     }
     to {
-        opacity: 0; /* Fica invisível */
+        opacity: 0; 
     }
 }
 
