@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+   🌿 Casa Verde
+</h1>
 
-## Getting Started
+   [Acesse o projeto aqui](https://casa-verde-pau4kagcx-andressa-rodrigues-projects-2e7528a6.vercel.app/)
+    
 
-First, run the development server:
+Tabela de conteúdos
+=================
+<!--ts-->
+   * [Sobre o projeto](#-sobre-o-projeto)
+   * [Como executar o projeto](#-como-executar-o-projeto)
+   * [Tecnologias](#-tecnologias)
+<!--te-->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 💻 Sobre o projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ Site em React de uma loja de plantas inspirado no modelo figma disponibilizado nos 7DaysOfCode da Alura por Mario Souto.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Como executar o projeto
 
-## Learn More
+Para utilizar o sistema siga os seguintes passos:
 
-To learn more about Next.js, take a look at the following resources:
+1. Certifique-se de ter o Node.js instalado em sua máquina.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Clone este repositório em sua máquina local usando o seguinte comando no terminal: `git clone https://github.com/AndressaARodrigues/Casa-Verde`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Acesse o diretório do projeto: `cd CasaVerde`
 
-## Deploy on Vercel
+4. Faça a instalação dos pacotes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Inicie o servidor de desenvolvimento: `npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. O aplicativo estará disponível no navegador apresentado.
+
+---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### ([React](https://reactjs.org/)  +  [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript))
+
+-   **[Next](https://nextjs.org/)**
+-   **[Formik](https://formik.org/)**
+  
+> Veja o arquivo  [package.json](package.json)
+
+#### **Utilitários**
+
+-   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**  
+---
